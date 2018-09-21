@@ -1,0 +1,15 @@
+grant {
+        //permission java.security.AllPermission;
+
+        permission javax.security.auth.AuthPermission "createLoginContext.Sample";
+        permission javax.security.auth.AuthPermission "modifyPrincipals";
+        permission javax.security.auth.AuthPermission "doAsPrivileged";
+};
+
+// JAAS 授权，授权给指定的用户或身份
+grant Principal com.lenzhao.demo.SamplePrincipal "user" {
+
+   permission java.util.PropertyPermission "java.home", "read";
+   permission java.util.PropertyPermission "user.home", "read";
+   permission java.io.FilePermission "foo.txt", "read";
+};
